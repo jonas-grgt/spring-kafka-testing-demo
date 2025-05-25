@@ -1,0 +1,17 @@
+bank:
+  topics:
+    fraud-alert: ${ENV}.transactions.creditcard.fraud-alert.events
+
+spring:
+  kafka:
+    client-id: ${ENV}.bank
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        avro.remove.java.properties: true
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: true

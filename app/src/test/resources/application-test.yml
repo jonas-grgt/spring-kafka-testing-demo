@@ -1,0 +1,6 @@
+ENV: test
+
+spring:
+  kafka:
+    properties:
+      schema.registry.url: "mock://"

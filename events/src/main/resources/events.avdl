@@ -1,0 +1,16 @@
+namespace io.jonasg;
+
+enum SuspicionReason {
+	UNUSUAL_AMOUNT,
+	UNUSUAL_LOCATION,
+	UNUSUAL_FREQUENCY,
+	UNUSUAL_RECIPIENT,
+	OTHER,
+	UNKNOWN
+} = UNKNOWN;
+
+record FraudSuspected {
+	string fraudId;
+	decimal(30,6)? amount;
+	SuspicionReason suspicionReason;
+}

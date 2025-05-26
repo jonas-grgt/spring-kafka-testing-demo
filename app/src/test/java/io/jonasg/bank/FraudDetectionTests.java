@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import io.jonasg.FraudSuspected;
 
 @BankIntegrationTest
-class FraudDetectionTests implements KafkaContainerSupport {
+class FraudDetectionTests {
 
     @Autowired
     ConsumerFactory<String, Object> consumerFactory;

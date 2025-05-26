@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
 
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 
 @Target({ ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -16,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Inherited
 @SpringBootTest
 @AutoConfigureMockMvc
+@Import(TestcontainersConfiguration.class)
 public @interface BankIntegrationTest {
 
 }

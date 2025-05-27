@@ -11,6 +11,7 @@ class TestcontainersConfiguration {
 
     @Bean
     @ServiceConnection
+    @SuppressWarnings("resource")
     KafkaContainer kafkaContainer() {
         return new KafkaContainer("apache/kafka-native:3.8.0")
                 .withReuse(true)
